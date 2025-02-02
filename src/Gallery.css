@@ -1,0 +1,229 @@
+.gallery-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-main-title {
+    font-size: 5em;
+    background-image: linear-gradient(#345995, #345995);
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+    transition: background-size 0.7s, background-position 0.5s ease-in-out;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.gallery-main-title:hover {
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+    transition: background-position 0.7s, background-size 0.5s ease-in-out;
+}
+
+.gallery-el {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+
+.el-left {
+    flex-direction: row;
+}
+
+.el-right {
+    flex-direction: row-reverse;
+}
+
+.gallery-title {
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.t-left {
+    flex-direction: column-reverse;
+    text-align: right;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+}
+
+.t-right {
+    flex-direction: column;
+    text-align: left;
+    writing-mode: vertical-rl;
+}
+
+.vl {
+    border-left: 4px solid black;
+    height: auto;
+}
+
+.gallery-photos {
+    width: 85%;
+}
+
+.photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.photo-item {
+    position: relative;
+    width: 47%; /* Adjust as needed */
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.photo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.viewfinder {
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: white;
+}
+
+.photo-item:hover .viewfinder {
+    opacity: 1;
+}
+
+.viewfinder-info {
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-main-title {
+        font-size: 3rem;
+    }
+    
+    .gallery-title {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .viewfinder { 
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .gallery-main-title {
+        font-size: 3rem;
+    }
+    
+    .gallery-title {
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .photo-item {
+        width: 85%;
+    }
+
+    .gallery-photos {
+        width: 88%;
+    }
+
+    .gallery-el {
+        width: 90%;
+        justify-content: space-around;
+    }
+    
+    .gallery-title {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .photo-item {
+        width: 85%;
+    }
+
+    .gallery-el {
+        justify-content:space-around;
+        width: 90%;
+    }
+
+    .gallery-photos {
+        width: 85%;
+    }
+
+    .gallery-title {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}

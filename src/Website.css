@@ -1,0 +1,181 @@
+.websites-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.scrolling-title {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.title-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 15s linear infinite;
+}
+
+.title-track span {
+    font-size: 5rem;
+    margin: 0 10px;
+    color: #333;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.project-el {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 95%;
+    height: 80vh;
+    position: relative;
+}
+
+.project-el:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.project-image {
+    height: 100%;
+    overflow: hidden;
+    background: -moz-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    ); /* FF3.6+ */
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0%, rgba(0, 0, 0, 0.5)),
+        color-stop(100%, rgba(0, 0, 0, 0))
+    ); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    ); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    ); /* Opera 11.10+ */
+    background: -ms-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    ); /* IE10+ */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    ); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: -1;
+}
+
+.project-el:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-title h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.project-description p {
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+    font-size: 1.5rem;
+    width: 40%;
+    text-align: right;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .title-track span {
+        font-size: 3rem;
+    }
+
+    .project-el {
+        width: 95%;
+        height: 40vh;
+    }
+    
+    .project-description p {
+        font-size: 1rem;
+    }
+    .project-title h3 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .title-track span {
+        font-size: 3rem;
+    }
+
+    .project-el {
+        width: 95%;
+        height: 40vh;
+    }
+    
+    .project-description p {
+        font-size: 1rem;
+    }
+    .project-title h3 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .title-track span {
+        font-size: 3rem;
+    }
+
+    .project-el {
+        width: 95%;
+        height: 30vh;
+    }
+    
+    .project-description p {
+        font-size: 0.6rem;
+    }
+    .project-title h3 {
+        font-size: 0.7rem;
+    }
+}
