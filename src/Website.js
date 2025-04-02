@@ -1,13 +1,21 @@
 import React from "react";
 import "./Website.css";
 import donamus from "./photos/donamus.png";
-import expchats from "./photos/expchats.png";
+import empowered from "./photos/empowered.png";
 import healthhero from "./photos/healthhero.png";
 
 const Website = () => {
     const websitesData = [
         {
-            id: 1,
+            id: 3,
+            src: empowered,
+            title: "EmpowerED Consulting",
+            description: "Official club website for EmpowerED Consulting based out of NYU",
+            tech: "React, CSS, firebase, nodemailer",
+            link: "https://www.empowerednyu.org/",
+        },
+        {
+            id: 2,
             src: donamus,
             title: "Project Donamus",
             description:
@@ -16,21 +24,13 @@ const Website = () => {
             link: "https://pantry-9ed2a.web.app/",
         },
         {
-            id: 2,
+            id: 3,
             src: healthhero,
             title: "HealthCare Hero",
             description:
                 "Providing diagnostic advice using user provided symptoms",
             tech: "HTML, CSS, JS, PHP",
             link: "https://healthcarehero.web.app/",
-        },
-        {
-            id: 3,
-            src: expchats,
-            title: "Express Chat",
-            description: "Simple chatting app",
-            tech: "React, CSS, firebase",
-            link: "https://expchats.web.app/",
         },
     ];
 
